@@ -20,3 +20,9 @@ resource "aws_wafregional_web_acl_association" "foo" {
   resource_arn = "${aws_alb.test.arn}"
   web_acl_id = "${aws_wafregional_web_acl.waf_acl.id}"
 }
+
+resource "aws_wafregional_web_acl_association" "foo1" {
+  depends_on = ["aws_alb.test"]
+  resource_arn = "${aws_alb.test.arn}"
+  web_acl_id = "${aws_cloudformation_stack.owasp-cf.outputs["wafWebACL"]}"
+}
