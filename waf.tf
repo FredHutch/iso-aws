@@ -1,3 +1,5 @@
+
+
 resource "aws_wafregional_ipset" "ipset" {
   name = "tfIPSet"
 
@@ -18,6 +20,8 @@ resource "aws_wafregional_rule" "wafrule" {
     type    = "IPMatch"
   }
 }
+
+
 
 resource "aws_wafregional_web_acl" "waf_acl" {
   depends_on  = ["aws_wafregional_ipset.ipset", "aws_wafregional_rule.wafrule"]
