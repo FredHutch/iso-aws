@@ -4,6 +4,3 @@
 
 # Module directory
 .terraform/
-
-# Variables
-terraform.tfvars
