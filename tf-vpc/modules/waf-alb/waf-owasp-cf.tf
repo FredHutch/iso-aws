@@ -1,6 +1,6 @@
 
 resource "aws_cloudformation_stack" "owasp-cf" {
-  name = "owasp-top10-defense"
+  name = "owasp-top10"
 
   parameters {
     stackScope = "Regional"
